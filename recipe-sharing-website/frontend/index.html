@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RecipeNest</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="logo" href="#home">RecipeNest</a>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#recipes">Browse Recipes</a>
+        <a href="#submit">Submit Recipe</a>
+        <a href="#profile">User Profile</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="page active">
+        <div class="hero">
+          <div class="hero-content">
+            <h1>Cook, share, and discover simple recipes.</h1>
+            <p>Find meals by ingredient, category, and time.</p>
+            <div class="actions">
+              <a class="button primary" href="#recipes">Browse Recipes</a>
+              <a class="button" href="#submit">Submit a Recipe</a>
+            </div>
+          </div>
+        </div>
+
+        <form class="search-panel" id="homeSearch">
+          <input id="searchInput" type="search" placeholder="Search by recipe title or ingredient" />
+          <button type="submit">Search</button>
+        </form>
+
+        <section class="section">
+          <h2>Featured Categories</h2>
+          <div class="categories" id="categoryLinks"></div>
+        </section>
+      </section>
+
+      <section id="recipes" class="page">
+        <div class="section-title">
+          <h2>Browse Recipes</h2>
+          <div class="filters">
+            <select id="categoryFilter">
+              <option value="">All categories</option>
+              <option>Breakfast</option>
+              <option>Vegan</option>
+              <option>Desserts</option>
+            </select>
+            <select id="timeFilter">
+              <option value="">Any time</option>
+              <option value="10">10 minutes</option>
+              <option value="20">20 minutes</option>
+              <option value="30">30 minutes</option>
+            </select>
+          </div>
+        </div>
+        <div class="recipe-grid" id="recipeGrid"></div>
+      </section>
+
+      <section id="detail" class="page">
+        <button class="link-button" id="backToRecipes">Back to recipes</button>
+        <article class="detail-view" id="recipeDetail"></article>
+      </section>
+
+      <section id="submit" class="page narrow">
+        <h2>Submit Recipe</h2>
+        <form id="recipeForm" class="form">
+          <input name="title" placeholder="Recipe title" required />
+          <textarea name="ingredients" placeholder="Ingredients, separated by commas or new lines" required></textarea>
+          <textarea name="instructions" placeholder="Step-by-step instructions" required></textarea>
+          <select name="category" required>
+            <option value="">Choose category</option>
+            <option>Breakfast</option>
+            <option>Vegan</option>
+            <option>Desserts</option>
+            <option>Dinner</option>
+          </select>
+          <input name="cookingTime" type="number" min="1" placeholder="Cooking time in minutes" required />
+          <button type="submit">Submit Recipe</button>
+          <p id="submitMessage" class="message"></p>
+        </form>
+      </section>
+
+      <section id="profile" class="page narrow">
+        <h2>User Profile</h2>
+        <form id="authForm" class="form">
+          <input name="name" placeholder="Name for registration" />
+          <input name="email" type="email" placeholder="Email" required />
+          <input name="password" type="password" placeholder="Password" required />
+          <div class="actions">
+            <button type="submit" data-mode="login">Login</button>
+            <button type="submit" data-mode="register">Register</button>
+          </div>
+          <p id="authMessage" class="message"></p>
+        </form>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

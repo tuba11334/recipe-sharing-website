@@ -1,0 +1,13 @@
+{
+  "name": "recipe-sharing-website",
+  "version": "1.0.0",
+  "description": "Minimal recipe sharing website with Express backend and JWT auth.",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.3"
+  }
+}
